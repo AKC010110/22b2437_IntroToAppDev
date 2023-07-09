@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 void main() {
-  runApp(CounterApp());
+  runApp(const CounterApp());
 }
 
 class CounterApp extends StatelessWidget {
+  const CounterApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -13,12 +14,14 @@ class CounterApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.grey,
       ),
-      home: CounterPage(),
+      home: const CounterPage(),
     );
   }
 }
 
 class CounterPage extends StatefulWidget {
+  const CounterPage({super.key});
+
   @override
   _CounterPageState createState() => _CounterPageState();
 }
@@ -42,10 +45,10 @@ class _CounterPageState extends State<CounterPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Counter App'),
+        title: const Text('Counter App'),
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: [Colors.grey, Colors.blue],
             begin: Alignment.topCenter,
@@ -56,7 +59,7 @@ class _CounterPageState extends State<CounterPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text(
+              const Text(
                 'Counter Value:',
                 style: TextStyle(fontSize: 20),
               ),
@@ -70,7 +73,7 @@ class _CounterPageState extends State<CounterPage> {
                 child: Center(
                   child: Text(
                     '$_counter',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
                     ),
@@ -87,13 +90,13 @@ class _CounterPageState extends State<CounterPage> {
           FloatingActionButton(
             onPressed: _incrementCounter,
             tooltip: 'Increment',
-            child: Icon(Icons.add),
+            child: const Icon(Icons.add),
           ),
-          SizedBox(width: 20),
+          const SizedBox(width: 20),
           FloatingActionButton(
             onPressed: _decrementCounter,
             tooltip: 'Decrement',
-            child: Icon(Icons.remove),
+            child: const Icon(Icons.remove),
           ),
         ],
       ),
